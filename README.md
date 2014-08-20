@@ -3,5 +3,5 @@ Timeline
 
 Timeline like the Path iOS app
 
-<p align="center"><img title="Open and close animation" src="https://raw.githubusercontent.com/edekhayser/Timeline/master/iOS%20Simulator%20Screen%20Shot%20Jul%2026,%202014,%205.54.55%20PM.png"/></p>
+<p align="center"><img title="Open and close animation" src="https://s3.amazonaws.com/cocoacontrols_production/uploads/control_image/image/4311/iOS_Simulator_Screen_Shot_Jul_26__2014__5.54.55_PM.png"/></p>
 
