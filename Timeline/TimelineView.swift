@@ -18,7 +18,7 @@ class TimelineView: UIView {
 	
 	var timeFrames: [TimeFrame]
 	
-	init(coder aDecoder: NSCoder!) {
+	required init(coder aDecoder: NSCoder) {
 		timeFrames = []
 		super.init(coder: aDecoder)
 	}
@@ -44,7 +44,7 @@ class TimelineView: UIView {
 				button.layer.cornerRadius = 10
                 button.backgroundColor = UIColor.blackColor()
 				button.contentMode = UIViewContentMode.ScaleAspectFit
-				button.imageView.contentMode = UIViewContentMode.ScaleAspectFit
+				button.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
 				button.clipsToBounds = true
 				button.tag = i
 				
