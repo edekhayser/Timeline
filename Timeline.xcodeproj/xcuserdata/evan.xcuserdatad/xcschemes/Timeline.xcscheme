@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0610"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20D74CA019846FB900BA030F"
+               BlueprintIdentifier = "200C5BE819FB1E01001EB442"
                BuildableName = "Timeline.app"
                BlueprintName = "Timeline"
+               ReferencedContainer = "container:Timeline.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "200C5BFD19FB1E01001EB442"
+               BuildableName = "TimelineTests.xctest"
+               BlueprintName = "TimelineTests"
                ReferencedContainer = "container:Timeline.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20D74CB219846FBA00BA030F"
+               BlueprintIdentifier = "200C5BFD19FB1E01001EB442"
                BuildableName = "TimelineTests.xctest"
                BlueprintName = "TimelineTests"
                ReferencedContainer = "container:Timeline.xcodeproj">
@@ -42,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "20D74CA019846FB900BA030F"
+            BlueprintIdentifier = "200C5BE819FB1E01001EB442"
             BuildableName = "Timeline.app"
             BlueprintName = "Timeline"
             ReferencedContainer = "container:Timeline.xcodeproj">
@@ -61,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "20D74CA019846FB900BA030F"
+            BlueprintIdentifier = "200C5BE819FB1E01001EB442"
             BuildableName = "Timeline.app"
             BlueprintName = "Timeline"
             ReferencedContainer = "container:Timeline.xcodeproj">
@@ -79,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "20D74CA019846FB900BA030F"
+            BlueprintIdentifier = "200C5BE819FB1E01001EB442"
             BuildableName = "Timeline.app"
             BlueprintName = "Timeline"
             ReferencedContainer = "container:Timeline.xcodeproj">
