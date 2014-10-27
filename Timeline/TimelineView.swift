@@ -44,7 +44,7 @@ public class TimelineView: UIView {
 			setupContent()
 		}
 	}
-
+	
 	public var bulletType: BulletType = BulletType.Diamond{
 		didSet{
 			setupContent()
@@ -234,38 +234,37 @@ public class TimelineView: UIView {
 				NSLayoutConstraint(item: button, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: 0)
 				])
 		}
-	
+		
 		let y = element.image == nil ? 0 as CGFloat : 145.0 as CGFloat
 		
 		let titleLabel = UILabel()
 		titleLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-		titleLabel.font = UIFont(name: "OpenSans-Semibold", size: 16)
+		titleLabel.font = UIFont(name: "ArialMT", size: 20)
 		titleLabel.textColor = titleLabelColor
 		titleLabel.text = element.date
 		titleLabel.numberOfLines = 0
-		titleLabel.sizeToFit()
+		titleLabel.layer.masksToBounds = false
 		v.addSubview(titleLabel)
 		v.addConstraints([
 			NSLayoutConstraint(item: titleLabel, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -40),
-			NSLayoutConstraint(item: titleLabel, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 18),
 			NSLayoutConstraint(item: titleLabel, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40),
 			NSLayoutConstraint(item: titleLabel, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: y - 5)
 			])
 		
 		let textLabel = UILabel()
 		textLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-		textLabel.font = UIFont(name: "OpenSans", size: 12)
+		textLabel.font = UIFont(name: "ArialMT", size: 16)
 		textLabel.text = element.text
 		textLabel.textColor = detailLabelColor
 		textLabel.numberOfLines = 0
+		textLabel.layer.masksToBounds = false
 		v.addSubview(textLabel)
 		v.addConstraints([
 			NSLayoutConstraint(item: textLabel, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -40),
 			NSLayoutConstraint(item: textLabel, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40),
-			NSLayoutConstraint(item: textLabel, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: y + 18),
+			NSLayoutConstraint(item: textLabel, attribute: .Top, relatedBy: .Equal, toItem: titleLabel, attribute: .Bottom, multiplier: 1.0, constant: 5),
 			NSLayoutConstraint(item: textLabel, attribute: .Bottom, relatedBy: .Equal, toItem: v, attribute: .Bottom, multiplier: 1.0, constant: -10)
 			])
-		textLabel.sizeToFit()
 		
 		//draw the line between the bullets
 		let line = UIView()
@@ -279,11 +278,11 @@ public class TimelineView: UIView {
 			NSLayoutConstraint(item: line, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: 14),
 			NSLayoutConstraint(item: line, attribute: .Height, relatedBy: .Equal, toItem: v, attribute: .Height, multiplier: 1.0, constant: -14)
 			])
-	
+		
 		return v
 	}
 	
-	private func tapImage(button: UIButton){
+	public func tapImage(button: UIButton){
 		var imageView: UIImageView? = nil
 		for v in subviews{
 			for w in v.subviews{
