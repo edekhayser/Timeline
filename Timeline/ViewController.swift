@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 			TimeFrame(text: "Dumb stupid pranks.", date: "April 1", image: UIImage(named: "april.jpeg")),
 			TimeFrame(text: "That's right. No image is necessary!", date: "No image?", image: nil),
 			TimeFrame(text: "This control can stretch. It doesn't matter how long or short the text is, or how many times you wiggle your nose and make a wish. The control always fits the content, and even extends a while at the end so the scroll view it is put into, even when pulled pretty far down, does not show the end of the scroll view.", date: "Long text", image: nil),
-			TimeFrame(text: "Hope this helps someone!", date: "That's is!", image: nil)
+			TimeFrame(text: "Hope this helps someone!", date: "That's it!", image: nil)
 			])
 		scrollView.addSubview(timeline)
 		scrollView.addConstraints([
@@ -55,6 +55,10 @@ class ViewController: UIViewController {
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
+	}
+	
+	override func prefersStatusBarHidden() -> Bool {
+		return true
 	}
 	
 	
