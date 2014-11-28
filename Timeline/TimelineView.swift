@@ -8,60 +8,131 @@
 
 import UIKit
 
+/**
+	Represents an instance in the Timeline. A Timeline is built using one or more of these TimeFrames.
+*/
 public struct TimeFrame{
+	/**
+		A description of the event.
+	*/
 	let text: String
+	/**
+		The date that the event occured.
+	*/
 	let date: String
+	/**
+		An optional image to show with the text and the date in the timeline.
+	*/
 	let image: UIImage?
 }
 
+/**
+	The shape of a bullet that appears next to each event in the Timeline.
+*/
 public enum BulletType{
+	/**
+		Bullet shaped as a circle with no fill.
+	*/
 	case Circle
+	/**
+		Bullet shaped as a hexagon with no fill.
+	*/
 	case Hexagon
+	/**
+		Bullet shaped as a diamond with no fill.
+	*/
 	case Diamond
+	/**
+		Bullet shaped as a circle with no fill and a horizontal line connecting two vertices.
+	*/
+	case DiamondSlash
+	/**
+		Bullet shaped as a carrot facing inward toward the event.
+	*/
+	case Carrot
+	/**
+		Bullet shaped as an arrow pointing inward toward the event.
+	*/
+	case Arrow
 }
 
+/**
+	View that shows the given events in bullet form.
+*/
 public class TimelineView: UIView {
 	
-	//Public Properties
+	//MARK: Public Properties
 	
+	/**
+		The events shown in the Timeline
+	*/
 	public var timeFrames: [TimeFrame]{
 		didSet{
 			setupContent()
 		}
 	}
+	
+	/**
+		The color of the bullets and the lines connecting them.
+	*/
 	public var lineColor: UIColor = UIColor.lightGrayColor(){
 		didSet{
 			setupContent()
 		}
 	}
+	
+	/**
+		Color of the larger Date title label in each event.
+	*/
 	public var titleLabelColor: UIColor = UIColor(red: 0/255, green: 180/255, blue: 160/255, alpha: 1){
 		didSet{
 			setupContent()
 		}
 	}
+	
+	/**
+		Color of the smaller Text detail label in each event.
+	*/
 	public var detailLabelColor: UIColor = UIColor(red: 110/255, green: 110/255, blue: 110/255, alpha: 1){
 		didSet{
 			setupContent()
 		}
 	}
 	
+	/**
+		The type of bullet shown next to each element.
+	*/
 	public var bulletType: BulletType = BulletType.Diamond{
 		didSet{
 			setupContent()
 		}
 	}
 	
-	//Private Properties
+	//MARK: Private Properties
 	
 	private var imageViewer: JTSImageViewController?
 	
-	//Public Methods
+	//MARK: Public Methods
 	
+	/**
+		Note that the timeFrames cannot be set by this method. Further setup is required once this initalization occurs.
+	
+		May require more work to allow this to work with restoration.
+	
+		@param coder An unarchiver object.
+	*/
 	required public init(coder aDecoder: NSCoder) {
 		timeFrames = []
 		super.init(coder: aDecoder)
 	}
 	
+	/**
+		Initializes the timeline with all information needed for a complete setup.
+	
+		@param bulletType The type of bullet shown next to each element.
+	
+		@param timeFrames The events shown in the Timeline
+	*/
 	public init(bulletType: BulletType, timeFrames: [TimeFrame]){
 		self.timeFrames = timeFrames
 		self.bulletType = bulletType
@@ -72,7 +143,9 @@ public class TimelineView: UIView {
 		setupContent()
 	}
 	
-	public func setupContent(){
+	//MARK: Private Methods
+	
+	private func setupContent(){
 		for v in subviews{
 			v.removeFromSuperview()
 		}
@@ -119,8 +192,6 @@ public class TimelineView: UIView {
 		addConstraint(NSLayoutConstraint(item: viewFromAbove, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: 0))
 	}
 	
-	//Private Methods
-	
 	private func hexagonView(size: CGSize) -> UIView{
 		let hex = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.width))
 		hex.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -161,6 +232,20 @@ public class TimelineView: UIView {
 		return diamond
 	}
 	
+	private func diamondSlashView(size: CGSize) -> UIView{
+		let diamondSlash = diamondView(size)
+		let path = UIBezierPath()
+		path.lineWidth = 1
+		path.moveToPoint(CGPoint(x: 0, y: size.height/2))
+		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
+		let shapeLayer = CAShapeLayer()
+		shapeLayer.fillColor = UIColor.clearColor().CGColor
+		shapeLayer.strokeColor = lineColor.CGColor
+		shapeLayer.path = path.CGPath
+		diamondSlash.layer.addSublayer(shapeLayer)
+		return diamondSlash
+	}
+	
 	private func circleView(size: CGSize) -> UIView{
 		let circle = UIView(frame: CGRect(x:0, y:0, width:14, height:14))
 		circle.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -170,6 +255,37 @@ public class TimelineView: UIView {
 		circle.clipsToBounds = true
 		circle.layer.cornerRadius = circle.frame.size.width / 2
 		return circle
+	}
+	
+	private func carrotView(size: CGSize) -> UIView{
+		let carrot = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+		carrot.setTranslatesAutoresizingMaskIntoConstraints(false)
+		carrot.backgroundColor = UIColor.clearColor()
+		let path = UIBezierPath()
+		path.lineWidth = 1
+		path.moveToPoint(CGPoint(x: size.width/2, y: 0))
+		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
+		path.addLineToPoint(CGPoint(x: size.width / 2, y: size.height))
+		let shapeLayer = CAShapeLayer()
+		shapeLayer.fillColor = UIColor.clearColor().CGColor
+		shapeLayer.strokeColor = lineColor.CGColor
+		shapeLayer.path = path.CGPath
+		carrot.layer.addSublayer(shapeLayer)
+		return carrot
+	}
+	
+	private func arrowView(size:CGSize) -> UIView{
+		let arrow = carrotView(size)
+		let path = UIBezierPath()
+		path.lineWidth = 1
+		path.moveToPoint(CGPoint(x: 0, y: size.height/2))
+		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
+		let shapeLayer = CAShapeLayer()
+		shapeLayer.fillColor = UIColor.clearColor().CGColor
+		shapeLayer.strokeColor = lineColor.CGColor
+		shapeLayer.path = path.CGPath
+		arrow.layer.addSublayer(shapeLayer)
+		return arrow
 	}
 	
 	private func blockForTimeFrame(element: TimeFrame, imageTag: Int) -> UIView{
@@ -184,8 +300,14 @@ public class TimelineView: UIView {
 			bullet = circleView(s)
 		case .Diamond:
 			bullet = diamondView(s)
+		case .DiamondSlash:
+			bullet = diamondSlashView(s)
 		case .Hexagon:
 			bullet = hexagonView(s)
+		case .Carrot:
+			bullet = carrotView(s)
+		case .Arrow:
+			bullet = arrowView(s)
 		}
 		v.addSubview(bullet)
 		v.addConstraints([
@@ -282,7 +404,7 @@ public class TimelineView: UIView {
 		return v
 	}
 	
-	public func tapImage(button: UIButton){
+	private func tapImage(button: UIButton){
 		var imageView: UIImageView? = nil
 		for v in subviews{
 			for w in v.subviews{
