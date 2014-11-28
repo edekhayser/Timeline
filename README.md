@@ -12,30 +12,30 @@ The timeline is a UIView subclass, and can be taller than the screen. It is best
 To initialize the timeline, use this code:
 
 ```swift
-  let timeline = TimelineView(bulletType: .Diamond, timeFrames: [/*events*/])
+let timeline = TimelineView(bulletType: .Diamond, timeFrames: [/*events*/])
 ```
 
 The bullet type can be replaced using any of the following types:
 
 ```swift
-  public enum BulletType{
-	  case Circle
-	  case Hexagon
-	  case Diamond
-	  case DiamondSlash
-	  case Carrot
-	  case Arrow
-  }
+public enum BulletType{
+	case Circle
+	case Hexagon
+	case Diamond
+	case DiamondSlash
+	case Carrot
+	case Arrow
+}
 ```
 
 The time frames must all be instances of the TimeFrame stuct. An array of TimeFrames may look like this:
 
 ```swift
-  let frames = [
-			  TimeFrame(text: "New Year's Day", date: "January 1", image: UIImage(named: "fireworks.jpeg")),
-			  TimeFrame(text: "That's right. No image is necessary!", date: "No image?", image: nil),
-			  TimeFrame(text: "Hope this helps someone!", date: "That's it!", image: nil)
-			  ]
+let frames = [
+		TimeFrame(text: "New Year's Day", date: "January 1", image: UIImage(named: "fireworks.jpeg")),
+		TimeFrame(text: "That's right. No image is necessary!", date: "No image?", image: nil),
+		TimeFrame(text: "Hope this helps someone!", date: "That's it!", image: nil)
+	]
 ```
 			
 After the timeline is initialized, it is ready to go. For more customization, you can edit the following properties:
