@@ -35,7 +35,7 @@ let frames = [
 		TimeFrame(text: "New Year's Day", date: "January 1", image: UIImage(named: "fireworks.jpeg")),
 		TimeFrame(text: "That's right. No image is necessary!", date: "No image?", image: nil),
 		TimeFrame(text: "Hope this helps someone!", date: "That's it!", image: nil)
-	]
+		]
 ```
 			
 After the timeline is initialized, it is ready to go. For more customization, you can edit the following properties:
