@@ -17,12 +17,12 @@
 		200C5C1F19FB1FB4001EB442 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 200C5C1C19FB1FB4001EB442 /* heart.png */; };
 		200C5C2019FB1FB4001EB442 /* fireworks.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 200C5C1D19FB1FB4001EB442 /* fireworks.jpeg */; };
 		200C5C2119FB1FB4001EB442 /* april.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 200C5C1E19FB1FB4001EB442 /* april.jpeg */; };
-		200C5C3619FC92F0001EB442 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 200C5C2F19FC92F0001EB442 /* JTSAnimatedGIFUtility.m */; };
-		200C5C3719FC92F0001EB442 /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 200C5C3119FC92F0001EB442 /* JTSImageInfo.m */; };
-		200C5C3819FC92F0001EB442 /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 200C5C3319FC92F0001EB442 /* JTSImageViewController.m */; };
-		200C5C3919FC92F0001EB442 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 200C5C3519FC92F0001EB442 /* JTSSimpleImageDownloader.m */; };
-		200C5C3D19FC9344001EB442 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 200C5C3C19FC9344001EB442 /* UIImage+JTSImageEffects.m */; };
-		200C5C4019FC939F001EB442 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 200C5C3F19FC939F001EB442 /* UIApplication+JTSImageViewController.m */; };
+		207DF9231A2824BA00D2E5D8 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 207DF9181A2824BA00D2E5D8 /* JTSAnimatedGIFUtility.m */; };
+		207DF9241A2824BA00D2E5D8 /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 207DF91A1A2824BA00D2E5D8 /* JTSImageInfo.m */; };
+		207DF9251A2824BA00D2E5D8 /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 207DF91C1A2824BA00D2E5D8 /* JTSImageViewController.m */; };
+		207DF9261A2824BA00D2E5D8 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 207DF91E1A2824BA00D2E5D8 /* JTSSimpleImageDownloader.m */; };
+		207DF9271A2824BA00D2E5D8 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 207DF9201A2824BA00D2E5D8 /* UIApplication+JTSImageViewController.m */; };
+		207DF9281A2824BA00D2E5D8 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 207DF9221A2824BA00D2E5D8 /* UIImage+JTSImageEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,18 +51,18 @@
 		200C5C1D19FB1FB4001EB442 /* fireworks.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fireworks.jpeg; sourceTree = "<group>"; };
 		200C5C1E19FB1FB4001EB442 /* april.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = april.jpeg; sourceTree = "<group>"; };
 		200C5C2219FB20A1001EB442 /* Timeline-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Timeline-Bridging-Header.h"; sourceTree = "<group>"; };
-		200C5C2E19FC92F0001EB442 /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
-		200C5C2F19FC92F0001EB442 /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
-		200C5C3019FC92F0001EB442 /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
-		200C5C3119FC92F0001EB442 /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
-		200C5C3219FC92F0001EB442 /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
-		200C5C3319FC92F0001EB442 /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
-		200C5C3419FC92F0001EB442 /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
-		200C5C3519FC92F0001EB442 /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
-		200C5C3B19FC9344001EB442 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
-		200C5C3C19FC9344001EB442 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
-		200C5C3E19FC939F001EB442 /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
-		200C5C3F19FC939F001EB442 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
+		207DF9171A2824BA00D2E5D8 /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTSAnimatedGIFUtility.h; path = JTSImageViewController/JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		207DF9181A2824BA00D2E5D8 /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTSAnimatedGIFUtility.m; path = JTSImageViewController/JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		207DF9191A2824BA00D2E5D8 /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTSImageInfo.h; path = JTSImageViewController/JTSImageInfo.h; sourceTree = "<group>"; };
+		207DF91A1A2824BA00D2E5D8 /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTSImageInfo.m; path = JTSImageViewController/JTSImageInfo.m; sourceTree = "<group>"; };
+		207DF91B1A2824BA00D2E5D8 /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTSImageViewController.h; path = JTSImageViewController/JTSImageViewController.h; sourceTree = "<group>"; };
+		207DF91C1A2824BA00D2E5D8 /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTSImageViewController.m; path = JTSImageViewController/JTSImageViewController.m; sourceTree = "<group>"; };
+		207DF91D1A2824BA00D2E5D8 /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTSSimpleImageDownloader.h; path = JTSImageViewController/JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		207DF91E1A2824BA00D2E5D8 /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTSSimpleImageDownloader.m; path = JTSImageViewController/JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		207DF91F1A2824BA00D2E5D8 /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+JTSImageViewController.h"; path = "JTSImageViewController/UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		207DF9201A2824BA00D2E5D8 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+JTSImageViewController.m"; path = "JTSImageViewController/UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
+		207DF9211A2824BA00D2E5D8 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+JTSImageEffects.h"; path = "JTSImageViewController/UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		207DF9221A2824BA00D2E5D8 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+JTSImageEffects.m"; path = "JTSImageViewController/UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,18 +148,18 @@
 		200C5C3A19FC92F7001EB442 /* JTSImageViewController */ = {
 			isa = PBXGroup;
 			children = (
-				200C5C2E19FC92F0001EB442 /* JTSAnimatedGIFUtility.h */,
-				200C5C2F19FC92F0001EB442 /* JTSAnimatedGIFUtility.m */,
-				200C5C3019FC92F0001EB442 /* JTSImageInfo.h */,
-				200C5C3119FC92F0001EB442 /* JTSImageInfo.m */,
-				200C5C3219FC92F0001EB442 /* JTSImageViewController.h */,
-				200C5C3319FC92F0001EB442 /* JTSImageViewController.m */,
-				200C5C3419FC92F0001EB442 /* JTSSimpleImageDownloader.h */,
-				200C5C3519FC92F0001EB442 /* JTSSimpleImageDownloader.m */,
-				200C5C3B19FC9344001EB442 /* UIImage+JTSImageEffects.h */,
-				200C5C3C19FC9344001EB442 /* UIImage+JTSImageEffects.m */,
-				200C5C3E19FC939F001EB442 /* UIApplication+JTSImageViewController.h */,
-				200C5C3F19FC939F001EB442 /* UIApplication+JTSImageViewController.m */,
+				207DF9171A2824BA00D2E5D8 /* JTSAnimatedGIFUtility.h */,
+				207DF9181A2824BA00D2E5D8 /* JTSAnimatedGIFUtility.m */,
+				207DF9191A2824BA00D2E5D8 /* JTSImageInfo.h */,
+				207DF91A1A2824BA00D2E5D8 /* JTSImageInfo.m */,
+				207DF91B1A2824BA00D2E5D8 /* JTSImageViewController.h */,
+				207DF91C1A2824BA00D2E5D8 /* JTSImageViewController.m */,
+				207DF91D1A2824BA00D2E5D8 /* JTSSimpleImageDownloader.h */,
+				207DF91E1A2824BA00D2E5D8 /* JTSSimpleImageDownloader.m */,
+				207DF91F1A2824BA00D2E5D8 /* UIApplication+JTSImageViewController.h */,
+				207DF9201A2824BA00D2E5D8 /* UIApplication+JTSImageViewController.m */,
+				207DF9211A2824BA00D2E5D8 /* UIImage+JTSImageEffects.h */,
+				207DF9221A2824BA00D2E5D8 /* UIImage+JTSImageEffects.m */,
 			);
 			name = JTSImageViewController;
 			sourceTree = "<group>";
@@ -267,15 +267,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207DF9241A2824BA00D2E5D8 /* JTSImageInfo.m in Sources */,
+				207DF9271A2824BA00D2E5D8 /* UIApplication+JTSImageViewController.m in Sources */,
+				207DF9261A2824BA00D2E5D8 /* JTSSimpleImageDownloader.m in Sources */,
+				207DF9231A2824BA00D2E5D8 /* JTSAnimatedGIFUtility.m in Sources */,
+				207DF9251A2824BA00D2E5D8 /* JTSImageViewController.m in Sources */,
 				200C5BF119FB1E01001EB442 /* ViewController.swift in Sources */,
 				200C5C0F19FB1E0F001EB442 /* TimelineView.swift in Sources */,
-				200C5C3919FC92F0001EB442 /* JTSSimpleImageDownloader.m in Sources */,
-				200C5C4019FC939F001EB442 /* UIApplication+JTSImageViewController.m in Sources */,
-				200C5C3619FC92F0001EB442 /* JTSAnimatedGIFUtility.m in Sources */,
 				200C5BEF19FB1E01001EB442 /* AppDelegate.swift in Sources */,
-				200C5C3719FC92F0001EB442 /* JTSImageInfo.m in Sources */,
-				200C5C3819FC92F0001EB442 /* JTSImageViewController.m in Sources */,
-				200C5C3D19FC9344001EB442 /* UIImage+JTSImageEffects.m in Sources */,
+				207DF9281A2824BA00D2E5D8 /* UIImage+JTSImageEffects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
