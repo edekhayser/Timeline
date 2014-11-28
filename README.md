@@ -41,15 +41,15 @@ The time frames must all be instances of the TimeFrame stuct. An array of TimeFr
 After the timeline is initialized, it is ready to go. For more customization, you can edit the following properties:
 
 ```swift
-  public var timeFrames: [TimeFrame]
+public var timeFrames: [TimeFrame]
   
-  public var lineColor: UIColor = UIColor.lightGrayColor()
+public var lineColor: UIColor = UIColor.lightGrayColor()
 	
-	public var titleLabelColor: UIColor = UIColor(red: 0/255, green: 180/255, blue: 160/255, alpha: 1)
+public var titleLabelColor: UIColor = UIColor(red: 0/255, green: 180/255, blue: 160/255, alpha: 1)
 
-	public var detailLabelColor: UIColor = UIColor(red: 110/255, green: 110/255, blue: 110/255, alpha: 1)
+public var detailLabelColor: UIColor = UIColor(red: 110/255, green: 110/255, blue: 110/255, alpha: 1)
 
-	public var bulletType: BulletType = BulletType.Diamond
+public var bulletType: BulletType = BulletType.Diamond
 ```
 
 For more precise detail on what these properties do, look at the inline documentation.
