@@ -191,11 +191,18 @@ public class TimelineView: UIView {
 			])
 		addConstraint(NSLayoutConstraint(item: viewFromAbove, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: 0))
 	}
-	
+
+    private func addShape(path: UIBezierPath, toView: UIView) {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.fillColor = UIColor.clearColor().CGColor
+        shapeLayer.strokeColor = lineColor.CGColor
+        shapeLayer.path = path.CGPath
+        toView.layer.addSublayer(shapeLayer)
+    }
+
 	private func hexagonView(size: CGSize) -> UIView{
 		let hex = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.width))
 		hex.setTranslatesAutoresizingMaskIntoConstraints(false)
-		hex.backgroundColor = UIColor.clearColor()
 		let path = UIBezierPath()
 		path.lineWidth = 1
 		path.moveToPoint(CGPoint(x: size.width / 2, y: 0))
@@ -205,18 +212,13 @@ public class TimelineView: UIView {
 		path.addLineToPoint(CGPoint(x: 0, y: size.height * 2 / 3))
 		path.addLineToPoint(CGPoint(x: 0, y: size.height / 3))
 		path.closePath()
-		let shapeLayer = CAShapeLayer()
-		shapeLayer.fillColor = UIColor.clearColor().CGColor
-		shapeLayer.strokeColor = lineColor.CGColor
-		shapeLayer.path = path.CGPath
-		hex.layer.addSublayer(shapeLayer)
+        addShape(path, toView: hex)
 		return hex
 	}
 	
 	private func diamondView(size: CGSize) -> UIView{
 		let diamond = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.width))
 		diamond.setTranslatesAutoresizingMaskIntoConstraints(false)
-		diamond.backgroundColor = UIColor.clearColor()
 		let path = UIBezierPath()
 		path.lineWidth = 1
 		path.moveToPoint(CGPoint(x: size.width / 2, y: 0))
@@ -224,11 +226,7 @@ public class TimelineView: UIView {
 		path.addLineToPoint(CGPoint(x: size.width / 2, y: size.height))
 		path.addLineToPoint(CGPoint(x: 0, y: size.width / 2))
 		path.closePath()
-		let shapeLayer = CAShapeLayer()
-		shapeLayer.fillColor = UIColor.clearColor().CGColor
-		shapeLayer.strokeColor = lineColor.CGColor
-		shapeLayer.path = path.CGPath
-		diamond.layer.addSublayer(shapeLayer)
+        addShape(path, toView: diamond)
 		return diamond
 	}
 	
@@ -238,39 +236,27 @@ public class TimelineView: UIView {
 		path.lineWidth = 1
 		path.moveToPoint(CGPoint(x: 0, y: size.height/2))
 		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
-		let shapeLayer = CAShapeLayer()
-		shapeLayer.fillColor = UIColor.clearColor().CGColor
-		shapeLayer.strokeColor = lineColor.CGColor
-		shapeLayer.path = path.CGPath
-		diamondSlash.layer.addSublayer(shapeLayer)
+        addShape(path, toView: diamondSlash)
 		return diamondSlash
 	}
 	
 	private func circleView(size: CGSize) -> UIView{
 		let circle = UIView(frame: CGRect(x:0, y:0, width:14, height:14))
-		circle.setTranslatesAutoresizingMaskIntoConstraints(false)
-		circle.backgroundColor = UIColor.clearColor()
-		circle.layer.borderWidth = 1
-		circle.layer.borderColor = lineColor.CGColor
-		circle.clipsToBounds = true
-		circle.layer.cornerRadius = circle.frame.size.width / 2
+        circle.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let path = UIBezierPath(ovalInRect: circle.bounds)
+        addShape(path, toView: circle)
 		return circle
 	}
 	
 	private func carrotView(size: CGSize) -> UIView{
 		let carrot = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
 		carrot.setTranslatesAutoresizingMaskIntoConstraints(false)
-		carrot.backgroundColor = UIColor.clearColor()
 		let path = UIBezierPath()
 		path.lineWidth = 1
 		path.moveToPoint(CGPoint(x: size.width/2, y: 0))
 		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
 		path.addLineToPoint(CGPoint(x: size.width / 2, y: size.height))
-		let shapeLayer = CAShapeLayer()
-		shapeLayer.fillColor = UIColor.clearColor().CGColor
-		shapeLayer.strokeColor = lineColor.CGColor
-		shapeLayer.path = path.CGPath
-		carrot.layer.addSublayer(shapeLayer)
+        addShape(path, toView: carrot)
 		return carrot
 	}
 	
@@ -280,11 +266,7 @@ public class TimelineView: UIView {
 		path.lineWidth = 1
 		path.moveToPoint(CGPoint(x: 0, y: size.height/2))
 		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
-		let shapeLayer = CAShapeLayer()
-		shapeLayer.fillColor = UIColor.clearColor().CGColor
-		shapeLayer.strokeColor = lineColor.CGColor
-		shapeLayer.path = path.CGPath
-		arrow.layer.addSublayer(shapeLayer)
+        addShape(path, toView: arrow)
 		return arrow
 	}
 	
