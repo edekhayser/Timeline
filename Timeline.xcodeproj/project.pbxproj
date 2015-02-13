@@ -10,9 +10,7 @@
 		200C5BEF19FB1E01001EB442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C5BEE19FB1E01001EB442 /* AppDelegate.swift */; };
 		200C5BF119FB1E01001EB442 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C5BF019FB1E01001EB442 /* ViewController.swift */; };
 		200C5BF419FB1E01001EB442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200C5BF219FB1E01001EB442 /* Main.storyboard */; };
-		200C5BF619FB1E01001EB442 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200C5BF519FB1E01001EB442 /* Images.xcassets */; };
 		200C5BF919FB1E01001EB442 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 200C5BF719FB1E01001EB442 /* LaunchScreen.xib */; };
-		200C5C0519FB1E01001EB442 /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C5C0419FB1E01001EB442 /* TimelineTests.swift */; };
 		200C5C0F19FB1E0F001EB442 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200C5C0E19FB1E0F001EB442 /* TimelineView.swift */; };
 		200C5C1F19FB1FB4001EB442 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 200C5C1C19FB1FB4001EB442 /* heart.png */; };
 		200C5C2019FB1FB4001EB442 /* fireworks.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 200C5C1D19FB1FB4001EB442 /* fireworks.jpeg */; };
@@ -25,27 +23,13 @@
 		207DF9281A2824BA00D2E5D8 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 207DF9221A2824BA00D2E5D8 /* UIImage+JTSImageEffects.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		200C5BFF19FB1E01001EB442 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 200C5BE119FB1E01001EB442 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 200C5BE819FB1E01001EB442;
-			remoteInfo = Timeline;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		200C5BE919FB1E01001EB442 /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		200C5BED19FB1E01001EB442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		200C5BEE19FB1E01001EB442 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		200C5BF019FB1E01001EB442 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		200C5BF319FB1E01001EB442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		200C5BF519FB1E01001EB442 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		200C5BF819FB1E01001EB442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		200C5BFE19FB1E01001EB442 /* TimelineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		200C5C0319FB1E01001EB442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		200C5C0419FB1E01001EB442 /* TimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTests.swift; sourceTree = "<group>"; };
 		200C5C0E19FB1E0F001EB442 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		200C5C1C19FB1FB4001EB442 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		200C5C1D19FB1FB4001EB442 /* fireworks.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fireworks.jpeg; sourceTree = "<group>"; };
@@ -73,13 +57,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		200C5BFB19FB1E01001EB442 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				200C5BEB19FB1E01001EB442 /* Timeline */,
-				200C5C0119FB1E01001EB442 /* TimelineTests */,
 				200C5BEA19FB1E01001EB442 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				200C5BE919FB1E01001EB442 /* Timeline.app */,
-				200C5BFE19FB1E01001EB442 /* TimelineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,7 +83,6 @@
 				200C5BF019FB1E01001EB442 /* ViewController.swift */,
 				200C5C0E19FB1E0F001EB442 /* TimelineView.swift */,
 				200C5BF219FB1E01001EB442 /* Main.storyboard */,
-				200C5BF519FB1E01001EB442 /* Images.xcassets */,
 				200C5C3A19FC92F7001EB442 /* JTSImageViewController */,
 				200C5BF719FB1E01001EB442 /* LaunchScreen.xib */,
 				200C5BEC19FB1E01001EB442 /* Supporting Files */,
@@ -124,23 +98,6 @@
 				200C5C1C19FB1FB4001EB442 /* heart.png */,
 				200C5C1D19FB1FB4001EB442 /* fireworks.jpeg */,
 				200C5C1E19FB1FB4001EB442 /* april.jpeg */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		200C5C0119FB1E01001EB442 /* TimelineTests */ = {
-			isa = PBXGroup;
-			children = (
-				200C5C0419FB1E01001EB442 /* TimelineTests.swift */,
-				200C5C0219FB1E01001EB442 /* Supporting Files */,
-			);
-			path = TimelineTests;
-			sourceTree = "<group>";
-		};
-		200C5C0219FB1E01001EB442 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				200C5C0319FB1E01001EB442 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -184,24 +141,6 @@
 			productReference = 200C5BE919FB1E01001EB442 /* Timeline.app */;
 			productType = "com.apple.product-type.application";
 		};
-		200C5BFD19FB1E01001EB442 /* TimelineTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 200C5C0B19FB1E01001EB442 /* Build configuration list for PBXNativeTarget "TimelineTests" */;
-			buildPhases = (
-				200C5BFA19FB1E01001EB442 /* Sources */,
-				200C5BFB19FB1E01001EB442 /* Frameworks */,
-				200C5BFC19FB1E01001EB442 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				200C5C0019FB1E01001EB442 /* PBXTargetDependency */,
-			);
-			name = TimelineTests;
-			productName = TimelineTests;
-			productReference = 200C5BFE19FB1E01001EB442 /* TimelineTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -213,10 +152,6 @@
 				TargetAttributes = {
 					200C5BE819FB1E01001EB442 = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					200C5BFD19FB1E01001EB442 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 200C5BE819FB1E01001EB442;
 					};
 				};
 			};
@@ -234,7 +169,6 @@
 			projectRoot = "";
 			targets = (
 				200C5BE819FB1E01001EB442 /* Timeline */,
-				200C5BFD19FB1E01001EB442 /* TimelineTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,14 +183,6 @@
 				200C5C2119FB1FB4001EB442 /* april.jpeg in Resources */,
 				200C5BF419FB1E01001EB442 /* Main.storyboard in Resources */,
 				200C5BF919FB1E01001EB442 /* LaunchScreen.xib in Resources */,
-				200C5BF619FB1E01001EB442 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		200C5BFC19FB1E01001EB442 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,23 +205,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		200C5BFA19FB1E01001EB442 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				200C5C0519FB1E01001EB442 /* TimelineTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		200C5C0019FB1E01001EB442 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 200C5BE819FB1E01001EB442 /* Timeline */;
-			targetProxy = 200C5BFF19FB1E01001EB442 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		200C5BF219FB1E01001EB442 /* Main.storyboard */ = {
@@ -421,40 +331,6 @@
 			};
 			name = Release;
 		};
-		200C5C0C19FB1E01001EB442 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TimelineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Timeline.app/Timeline";
-			};
-			name = Debug;
-		};
-		200C5C0D19FB1E01001EB442 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TimelineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Timeline.app/Timeline";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -472,15 +348,6 @@
 			buildConfigurations = (
 				200C5C0919FB1E01001EB442 /* Debug */,
 				200C5C0A19FB1E01001EB442 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		200C5C0B19FB1E01001EB442 /* Build configuration list for PBXNativeTarget "TimelineTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				200C5C0C19FB1E01001EB442 /* Debug */,
-				200C5C0D19FB1E01001EB442 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

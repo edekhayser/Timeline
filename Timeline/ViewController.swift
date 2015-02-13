@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 	
 	var scrollView: UIScrollView!
+    var timeline:   TimelineView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -21,12 +22,12 @@ class ViewController: UIViewController {
 		
 		view.addConstraints([
 			NSLayoutConstraint(item: scrollView, attribute: .Left, relatedBy: .Equal, toItem: view, attribute: .Left, multiplier: 1.0, constant: 0),
-			NSLayoutConstraint(item: scrollView, attribute: .Top, relatedBy: .Equal, toItem: view, attribute: .Top, multiplier: 1.0, constant: 0),
+			NSLayoutConstraint(item: scrollView, attribute: .Top, relatedBy: .Equal, toItem: view, attribute: .Top, multiplier: 1.0, constant: 29),
 			NSLayoutConstraint(item: scrollView, attribute: .Right, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1.0, constant: 0),
 			NSLayoutConstraint(item: scrollView, attribute: .Bottom, relatedBy: .Equal, toItem: view, attribute: .Bottom, multiplier: 1.0, constant: 0)
 			])
 		
-		let timeline = TimelineView(bulletType: .Diamond, timeFrames: [
+		timeline = TimelineView(bulletType: .Circle, timeFrames: [
 			TimeFrame(text: "New Year's Day", date: "January 1", image: UIImage(named: "fireworks.jpeg")),
 			TimeFrame(text: "The month of love!", date: "February 14", image: UIImage(named: "heart.png")),
 			TimeFrame(text: "Comes like a lion, leaves like a lamb", date: "March",  image: nil),
@@ -44,19 +45,14 @@ class ViewController: UIViewController {
 			
 			NSLayoutConstraint(item: timeline, attribute: .Width, relatedBy: .Equal, toItem: scrollView, attribute: .Width, multiplier: 1.0, constant: 0)
 			])
+
+        view.sendSubviewToBack(scrollView)
 	}
 	
-	override func viewDidAppear(animated: Bool) {
-		super.viewDidAppear(animated)
-		println(scrollView.subviews.first?.frame)
-		println(scrollView.frame)
-	}
-	
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-	
+    @IBAction func bulletChanged(sender: UISegmentedControl) {
+        timeline.bulletType = [BulletType.Circle, BulletType.Hexagon, BulletType.Diamond, BulletType.DiamondSlash, BulletType.Carrot, BulletType.Arrow][sender.selectedSegmentIndex]
+    }
+
 	override func prefersStatusBarHidden() -> Bool {
 		return true
 	}

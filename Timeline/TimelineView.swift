@@ -191,124 +191,42 @@ public class TimelineView: UIView {
 			])
 		addConstraint(NSLayoutConstraint(item: viewFromAbove, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: 0))
 	}
-	
-	private func hexagonView(size: CGSize) -> UIView{
-		let hex = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.width))
-		hex.setTranslatesAutoresizingMaskIntoConstraints(false)
-		hex.backgroundColor = UIColor.clearColor()
-		let path = UIBezierPath()
-		path.lineWidth = 1
-		path.moveToPoint(CGPoint(x: size.width / 2, y: 0))
-		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 3))
-		path.addLineToPoint(CGPoint(x: size.width, y: size.height * 2 / 3))
-		path.addLineToPoint(CGPoint(x: size.width / 2, y: size.height))
-		path.addLineToPoint(CGPoint(x: 0, y: size.height * 2 / 3))
-		path.addLineToPoint(CGPoint(x: 0, y: size.height / 3))
-		path.closePath()
-		let shapeLayer = CAShapeLayer()
-		shapeLayer.fillColor = UIColor.clearColor().CGColor
-		shapeLayer.strokeColor = lineColor.CGColor
-		shapeLayer.path = path.CGPath
-		hex.layer.addSublayer(shapeLayer)
-		return hex
-	}
-	
-	private func diamondView(size: CGSize) -> UIView{
-		let diamond = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.width))
-		diamond.setTranslatesAutoresizingMaskIntoConstraints(false)
-		diamond.backgroundColor = UIColor.clearColor()
-		let path = UIBezierPath()
-		path.lineWidth = 1
-		path.moveToPoint(CGPoint(x: size.width / 2, y: 0))
-		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
-		path.addLineToPoint(CGPoint(x: size.width / 2, y: size.height))
-		path.addLineToPoint(CGPoint(x: 0, y: size.width / 2))
-		path.closePath()
-		let shapeLayer = CAShapeLayer()
-		shapeLayer.fillColor = UIColor.clearColor().CGColor
-		shapeLayer.strokeColor = lineColor.CGColor
-		shapeLayer.path = path.CGPath
-		diamond.layer.addSublayer(shapeLayer)
-		return diamond
-	}
-	
-	private func diamondSlashView(size: CGSize) -> UIView{
-		let diamondSlash = diamondView(size)
-		let path = UIBezierPath()
-		path.lineWidth = 1
-		path.moveToPoint(CGPoint(x: 0, y: size.height/2))
-		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
-		let shapeLayer = CAShapeLayer()
-		shapeLayer.fillColor = UIColor.clearColor().CGColor
-		shapeLayer.strokeColor = lineColor.CGColor
-		shapeLayer.path = path.CGPath
-		diamondSlash.layer.addSublayer(shapeLayer)
-		return diamondSlash
-	}
-	
-	private func circleView(size: CGSize) -> UIView{
-		let circle = UIView(frame: CGRect(x:0, y:0, width:14, height:14))
-		circle.setTranslatesAutoresizingMaskIntoConstraints(false)
-		circle.backgroundColor = UIColor.clearColor()
-		circle.layer.borderWidth = 1
-		circle.layer.borderColor = lineColor.CGColor
-		circle.clipsToBounds = true
-		circle.layer.cornerRadius = circle.frame.size.width / 2
-		return circle
-	}
-	
-	private func carrotView(size: CGSize) -> UIView{
-		let carrot = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-		carrot.setTranslatesAutoresizingMaskIntoConstraints(false)
-		carrot.backgroundColor = UIColor.clearColor()
-		let path = UIBezierPath()
-		path.lineWidth = 1
-		path.moveToPoint(CGPoint(x: size.width/2, y: 0))
-		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
-		path.addLineToPoint(CGPoint(x: size.width / 2, y: size.height))
-		let shapeLayer = CAShapeLayer()
-		shapeLayer.fillColor = UIColor.clearColor().CGColor
-		shapeLayer.strokeColor = lineColor.CGColor
-		shapeLayer.path = path.CGPath
-		carrot.layer.addSublayer(shapeLayer)
-		return carrot
-	}
-	
-	private func arrowView(size:CGSize) -> UIView{
-		let arrow = carrotView(size)
-		let path = UIBezierPath()
-		path.lineWidth = 1
-		path.moveToPoint(CGPoint(x: 0, y: size.height/2))
-		path.addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
-		let shapeLayer = CAShapeLayer()
-		shapeLayer.fillColor = UIColor.clearColor().CGColor
-		shapeLayer.strokeColor = lineColor.CGColor
-		shapeLayer.path = path.CGPath
-		arrow.layer.addSublayer(shapeLayer)
-		return arrow
-	}
-	
+
+    private func bulletView(size: CGSize, bulletType: BulletType) -> UIView {
+        var path: UIBezierPath
+        switch bulletType {
+        case .Circle:
+            path = UIBezierPath(ovalOfSize: size)
+        case .Diamond:
+            path = UIBezierPath(diamondOfSize: size)
+        case .DiamondSlash:
+            path = UIBezierPath(diamondSlashOfSize: size)
+        case .Hexagon:
+            path = UIBezierPath(hexagonOfSize: size)
+        case .Carrot:
+            path = UIBezierPath(carrotOfSize: size)
+        case .Arrow:
+            path = UIBezierPath(arrowOfSize: size)
+        }
+
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.fillColor = UIColor.clearColor().CGColor
+        shapeLayer.strokeColor = lineColor.CGColor
+        shapeLayer.path = path.CGPath
+
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.width))
+        v.setTranslatesAutoresizingMaskIntoConstraints(false)
+        v.layer.addSublayer(shapeLayer)
+        return v
+    }
+    
 	private func blockForTimeFrame(element: TimeFrame, imageTag: Int) -> UIView{
 		let v = UIView()
 		v.setTranslatesAutoresizingMaskIntoConstraints(false)
 		
 		//bullet
-		var bullet: UIView
 		let s = CGSize(width: 14, height: 14)
-		switch bulletType{
-		case .Circle:
-			bullet = circleView(s)
-		case .Diamond:
-			bullet = diamondView(s)
-		case .DiamondSlash:
-			bullet = diamondSlashView(s)
-		case .Hexagon:
-			bullet = hexagonView(s)
-		case .Carrot:
-			bullet = carrotView(s)
-		case .Arrow:
-			bullet = arrowView(s)
-		}
+        var bullet: UIView = bulletView(s, bulletType: bulletType)
 		v.addSubview(bullet)
 		v.addConstraints([
 			NSLayoutConstraint(item: bullet, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 10),
@@ -422,4 +340,50 @@ public class TimelineView: UIView {
 			imageViewer!.showFromViewController(UIApplication.sharedApplication().keyWindow?.rootViewController, transition: JTSImageViewControllerTransition._FromOriginalPosition)
 		}
 	}
+}
+
+extension UIBezierPath {
+
+    convenience init(hexagonOfSize size: CGSize) {
+        self.init()
+        moveToPoint(CGPoint(x: size.width / 2, y: 0))
+        addLineToPoint(CGPoint(x: size.width, y: size.height / 3))
+        addLineToPoint(CGPoint(x: size.width, y: size.height * 2 / 3))
+        addLineToPoint(CGPoint(x: size.width / 2, y: size.height))
+        addLineToPoint(CGPoint(x: 0, y: size.height * 2 / 3))
+        addLineToPoint(CGPoint(x: 0, y: size.height / 3))
+        closePath()
+    }
+
+    convenience init(diamondOfSize size: CGSize) {
+        self.init()
+        moveToPoint(CGPoint(x: size.width / 2, y: 0))
+        addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
+        addLineToPoint(CGPoint(x: size.width / 2, y: size.height))
+        addLineToPoint(CGPoint(x: 0, y: size.width / 2))
+        closePath()
+    }
+
+    convenience init(diamondSlashOfSize size: CGSize) {
+        self.init(diamondOfSize: size)
+        moveToPoint(CGPoint(x: 0, y: size.height/2))
+        addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
+    }
+
+    convenience init(ovalOfSize size: CGSize) {
+        self.init(ovalInRect: CGRect(origin: CGPointZero, size: size))
+    }
+
+    convenience init(carrotOfSize size: CGSize) {
+        self.init()
+        moveToPoint(CGPoint(x: size.width/2, y: 0))
+        addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
+        addLineToPoint(CGPoint(x: size.width / 2, y: size.height))
+    }
+
+    convenience init(arrowOfSize size: CGSize) {
+        self.init(carrotOfSize: size)
+        moveToPoint(CGPoint(x: 0, y: size.height/2))
+        addLineToPoint(CGPoint(x: size.width, y: size.height / 2))
+    }
 }
