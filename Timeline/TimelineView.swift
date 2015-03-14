@@ -255,10 +255,10 @@ public class TimelineView: UIView {
 			v.addSubview(imageView)
 			imageView.tag = imageTag
 			v.addConstraints([
-				NSLayoutConstraint(item: imageView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 130),
-				NSLayoutConstraint(item: imageView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 130),
-				NSLayoutConstraint(item: imageView, attribute: .CenterX, relatedBy: .Equal, toItem: backgroundViewForImage, attribute: .CenterX, multiplier: 1.0, constant: 0),
-				NSLayoutConstraint(item: imageView, attribute: .CenterY, relatedBy: .Equal, toItem: backgroundViewForImage, attribute: .CenterY, multiplier: 1.0, constant: 0)
+				NSLayoutConstraint(item: imageView, attribute: .Left, relatedBy: .Equal, toItem: backgroundViewForImage, attribute: .Left, multiplier: 1.0, constant: 0),
+				NSLayoutConstraint(item: imageView, attribute: .Right, relatedBy: .Equal, toItem: backgroundViewForImage, attribute: .Right, multiplier: 1.0, constant: 0),
+				NSLayoutConstraint(item: imageView, attribute: .Top, relatedBy: .Equal, toItem: backgroundViewForImage, attribute: .Top, multiplier: 1.0, constant: 0),
+				NSLayoutConstraint(item: imageView, attribute: .Bottom, relatedBy: .Equal, toItem: backgroundViewForImage, attribute: .Bottom, multiplier: 1.0, constant: 0)
 				])
 			
 			let button = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
@@ -322,7 +322,7 @@ public class TimelineView: UIView {
 		return v
 	}
 	
-	private func tapImage(button: UIButton){
+	func tapImage(button: UIButton){
 		var imageView: UIImageView? = nil
 		for v in subviews{
 			for w in v.subviews{
