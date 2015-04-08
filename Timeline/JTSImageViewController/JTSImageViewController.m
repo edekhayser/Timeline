@@ -1431,7 +1431,7 @@ UIGestureRecognizerDelegate
     }
     
     CGPoint velocity = [scrollView.panGestureRecognizer velocityInView:scrollView.panGestureRecognizer.view];
-    if (scrollView.zoomScale == 1 && (fabsf(velocity.x) > 1600 || fabsf(velocity.y) > 1600 ) ) {
+    if (scrollView.zoomScale == 1 && (fabs(velocity.x) > 1600 || fabs(velocity.y) > 1600 ) ) {
         [self dismiss:YES];
     }
 }

@@ -261,7 +261,7 @@ public class TimelineView: UIView {
 				NSLayoutConstraint(item: imageView, attribute: .Bottom, relatedBy: .Equal, toItem: backgroundViewForImage, attribute: .Bottom, multiplier: 1.0, constant: 0)
 				])
 			
-			let button = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+			let button = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
 			button.setTranslatesAutoresizingMaskIntoConstraints(false)
 			button.backgroundColor = UIColor.clearColor()
 			button.tag = imageTag
@@ -327,7 +327,7 @@ public class TimelineView: UIView {
 		for v in subviews{
 			for w in v.subviews{
 				if w.tag == button.tag && w is UIImageView{
-					imageView = (w as UIImageView)
+					imageView = (w as? UIImageView)
 				}
 			}
 		}
