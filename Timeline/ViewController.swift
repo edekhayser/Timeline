@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		scrollView = UIScrollView(frame: view.bounds)
-		scrollView.setTranslatesAutoresizingMaskIntoConstraints(false)
+		scrollView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(scrollView)
 		
 		view.addConstraints([

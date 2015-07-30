@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Nice Boy LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface JTSSimpleImageDownloader : NSObject
 
