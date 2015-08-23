@@ -109,6 +109,15 @@ public class TimelineView: UIView {
 		}
 	}
 	
+	/**
+		If enabled, the timeline shows with the bullet on the right side instead of the left.
+	*/
+	public var showBulletOnRight: Bool = false{
+		didSet{
+			setupContent()
+		}
+	}
+	
 	//MARK: Private Properties
 	
 	private var imageViewer: JTSImageViewController?
@@ -170,9 +179,13 @@ public class TimelineView: UIView {
 			addSubview(v)
 			addConstraints([
 				NSLayoutConstraint(item: v, attribute: .Top, relatedBy: .Equal, toItem: viewFromAbove, attribute: .Bottom, multiplier: 1.0, constant: 0),
-				NSLayoutConstraint(item: v, attribute: .Left, relatedBy: .Equal, toItem: viewFromAbove, attribute: .Left, multiplier: 1.0, constant: 0),
 				NSLayoutConstraint(item: v, attribute: .Width, relatedBy: .Equal, toItem: viewFromAbove, attribute: .Width, multiplier: 1.0, constant: 0),
 				])
+			if showBulletOnRight{
+				addConstraint(NSLayoutConstraint(item: v, attribute: .Right, relatedBy: .Equal, toItem: viewFromAbove, attribute: .Right, multiplier: 1.0, constant: 0))
+			} else {
+				addConstraint(NSLayoutConstraint(item: v, attribute: .Left, relatedBy: .Equal, toItem: viewFromAbove, attribute: .Left, multiplier: 1.0, constant: 0))
+			}
 			viewFromAbove = v
 			i++
 		}
@@ -185,11 +198,15 @@ public class TimelineView: UIView {
 		addSubview(line)
 		sendSubviewToBack(line)
 		addConstraints([
-			NSLayoutConstraint(item: line, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1.0, constant: 16.5),
 			NSLayoutConstraint(item: line, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 1),
 			NSLayoutConstraint(item: line, attribute: .Top, relatedBy: .Equal, toItem: viewFromAbove, attribute: .Bottom, multiplier: 1.0, constant: 0),
 			NSLayoutConstraint(item: line, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: extraSpace)
 			])
+		if showBulletOnRight{
+			addConstraint(NSLayoutConstraint(item: line, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1.0, constant: -16.5))
+		} else {
+			addConstraint(NSLayoutConstraint(item: line, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1.0, constant: 16.5))
+		}
 		addConstraint(NSLayoutConstraint(item: viewFromAbove, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: 0))
 	}
 
@@ -229,10 +246,12 @@ public class TimelineView: UIView {
 		let s = CGSize(width: 14, height: 14)
         let bullet: UIView = bulletView(s, bulletType: bulletType)
 		v.addSubview(bullet)
-		v.addConstraints([
-			NSLayoutConstraint(item: bullet, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 10),
-			NSLayoutConstraint(item: bullet, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: 0)
-			])
+		v.addConstraint(NSLayoutConstraint(item: bullet, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: 0))
+		if showBulletOnRight{
+			v.addConstraint(NSLayoutConstraint(item: bullet, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -24))
+		} else {
+			v.addConstraint(NSLayoutConstraint(item: bullet, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 10))
+		}
 		
 		//image
 		if let image = element.image{
@@ -245,9 +264,13 @@ public class TimelineView: UIView {
 			v.addConstraints([
 				NSLayoutConstraint(item: backgroundViewForImage, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -60),
 				NSLayoutConstraint(item: backgroundViewForImage, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 130),
-				NSLayoutConstraint(item: backgroundViewForImage, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40),
 				NSLayoutConstraint(item: backgroundViewForImage, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: 0)
 				])
+			if showBulletOnRight{
+				v.addConstraint(NSLayoutConstraint(item: backgroundViewForImage, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -40))
+			} else {
+				v.addConstraint(NSLayoutConstraint(item: backgroundViewForImage, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40))
+			}
 			
 			let imageView = UIImageView(image: image)
 			imageView.layer.cornerRadius = 10
@@ -271,9 +294,13 @@ public class TimelineView: UIView {
 			v.addConstraints([
 				NSLayoutConstraint(item: button, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -60),
 				NSLayoutConstraint(item: button, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 130),
-				NSLayoutConstraint(item: button, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40),
 				NSLayoutConstraint(item: button, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: 0)
 				])
+			if showBulletOnRight{
+				v.addConstraint(NSLayoutConstraint(item: button, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -40))
+			} else {
+				v.addConstraint(NSLayoutConstraint(item: button, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40))
+			}
 		}
 		
 		let y = element.image == nil ? 0 as CGFloat : 145.0 as CGFloat
@@ -288,9 +315,15 @@ public class TimelineView: UIView {
 		v.addSubview(titleLabel)
 		v.addConstraints([
 			NSLayoutConstraint(item: titleLabel, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -40),
-			NSLayoutConstraint(item: titleLabel, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40),
 			NSLayoutConstraint(item: titleLabel, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: y - 5)
 			])
+		if showBulletOnRight{
+			v.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -40))
+			titleLabel.textAlignment = .Right
+		} else {
+			v.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40))
+			titleLabel.textAlignment = .Left
+		}
 		
 		let textLabel = UILabel()
 		textLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -302,10 +335,16 @@ public class TimelineView: UIView {
 		v.addSubview(textLabel)
 		v.addConstraints([
 			NSLayoutConstraint(item: textLabel, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -40),
-			NSLayoutConstraint(item: textLabel, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40),
 			NSLayoutConstraint(item: textLabel, attribute: .Top, relatedBy: .Equal, toItem: titleLabel, attribute: .Bottom, multiplier: 1.0, constant: 5),
 			NSLayoutConstraint(item: textLabel, attribute: .Bottom, relatedBy: .Equal, toItem: v, attribute: .Bottom, multiplier: 1.0, constant: -10)
 			])
+		if showBulletOnRight{
+			v.addConstraint(NSLayoutConstraint(item: textLabel, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -40))
+			textLabel.textAlignment = .Right
+		} else {
+			v.addConstraint(NSLayoutConstraint(item: textLabel, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40))
+			textLabel.textAlignment = .Left
+		}
 		
 		//draw the line between the bullets
 		let line = UIView()
@@ -315,10 +354,14 @@ public class TimelineView: UIView {
 		sendSubviewToBack(line)
 		v.addConstraints([
 			NSLayoutConstraint(item: line, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 1),
-			NSLayoutConstraint(item: line, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 16.5),
 			NSLayoutConstraint(item: line, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: 14),
 			NSLayoutConstraint(item: line, attribute: .Height, relatedBy: .Equal, toItem: v, attribute: .Height, multiplier: 1.0, constant: -14)
 			])
+		if showBulletOnRight{
+			v.addConstraint(NSLayoutConstraint(item: line, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -16.5))
+		} else {
+			v.addConstraint(NSLayoutConstraint(item: line, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 16.5))
+		}
 		
 		return v
 	}
