@@ -36,7 +36,6 @@ class ViewController: UIViewController {
 			TimeFrame(text: "This control can stretch. It doesn't matter how long or short the text is, or how many times you wiggle your nose and make a wish. The control always fits the content, and even extends a while at the end so the scroll view it is put into, even when pulled pretty far down, does not show the end of the scroll view.", date: "Long text", image: nil),
 			TimeFrame(text: "Hope this helps someone!", date: "That's it!", image: nil)
 			])
-		timeline.showBulletOnRight = true
 		scrollView.addSubview(timeline)
 		scrollView.addConstraints([
 			NSLayoutConstraint(item: timeline, attribute: .Left, relatedBy: .Equal, toItem: scrollView, attribute: .Left, multiplier: 1.0, constant: 0),
