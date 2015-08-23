@@ -253,6 +253,46 @@ public class TimelineView: UIView {
 			v.addConstraint(NSLayoutConstraint(item: bullet, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 10))
 		}
 		
+		let titleLabel = UILabel()
+		titleLabel.translatesAutoresizingMaskIntoConstraints = false
+		titleLabel.font = UIFont(name: "ArialMT", size: 20)
+		titleLabel.textColor = titleLabelColor
+		titleLabel.text = element.date
+		titleLabel.numberOfLines = 0
+		titleLabel.layer.masksToBounds = false
+		v.addSubview(titleLabel)
+		v.addConstraints([
+			NSLayoutConstraint(item: titleLabel, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -40),
+			NSLayoutConstraint(item: titleLabel, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: -5)
+			])
+		if showBulletOnRight{
+			v.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -40))
+			titleLabel.textAlignment = .Right
+		} else {
+			v.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40))
+			titleLabel.textAlignment = .Left
+		}
+		
+		let textLabel = UILabel()
+		textLabel.translatesAutoresizingMaskIntoConstraints = false
+		textLabel.font = UIFont(name: "ArialMT", size: 16)
+		textLabel.text = element.text
+		textLabel.textColor = detailLabelColor
+		textLabel.numberOfLines = 0
+		textLabel.layer.masksToBounds = false
+		v.addSubview(textLabel)
+		v.addConstraints([
+			NSLayoutConstraint(item: textLabel, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -40),
+			NSLayoutConstraint(item: textLabel, attribute: .Top, relatedBy: .Equal, toItem: titleLabel, attribute: .Bottom, multiplier: 1.0, constant: 5),
+			])
+		if showBulletOnRight{
+			v.addConstraint(NSLayoutConstraint(item: textLabel, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -40))
+			textLabel.textAlignment = .Right
+		} else {
+			v.addConstraint(NSLayoutConstraint(item: textLabel, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40))
+			textLabel.textAlignment = .Left
+		}
+		
 		//image
 		if let image = element.image{
 			
@@ -264,7 +304,8 @@ public class TimelineView: UIView {
 			v.addConstraints([
 				NSLayoutConstraint(item: backgroundViewForImage, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -60),
 				NSLayoutConstraint(item: backgroundViewForImage, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 130),
-				NSLayoutConstraint(item: backgroundViewForImage, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: 0)
+				NSLayoutConstraint(item: backgroundViewForImage, attribute: .Top, relatedBy: .Equal, toItem: textLabel, attribute: .Bottom, multiplier: 1.0, constant: 5),
+				NSLayoutConstraint(item: backgroundViewForImage, attribute: .Bottom, relatedBy: .Equal, toItem: v, attribute: .Bottom, multiplier: 1.0, constant: -10)
 				])
 			if showBulletOnRight{
 				v.addConstraint(NSLayoutConstraint(item: backgroundViewForImage, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -40))
@@ -301,49 +342,8 @@ public class TimelineView: UIView {
 			} else {
 				v.addConstraint(NSLayoutConstraint(item: button, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40))
 			}
-		}
-		
-		let y = element.image == nil ? 0 as CGFloat : 145.0 as CGFloat
-		
-		let titleLabel = UILabel()
-		titleLabel.translatesAutoresizingMaskIntoConstraints = false
-		titleLabel.font = UIFont(name: "ArialMT", size: 20)
-		titleLabel.textColor = titleLabelColor
-		titleLabel.text = element.date
-		titleLabel.numberOfLines = 0
-		titleLabel.layer.masksToBounds = false
-		v.addSubview(titleLabel)
-		v.addConstraints([
-			NSLayoutConstraint(item: titleLabel, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -40),
-			NSLayoutConstraint(item: titleLabel, attribute: .Top, relatedBy: .Equal, toItem: v, attribute: .Top, multiplier: 1.0, constant: y - 5)
-			])
-		if showBulletOnRight{
-			v.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -40))
-			titleLabel.textAlignment = .Right
 		} else {
-			v.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40))
-			titleLabel.textAlignment = .Left
-		}
-		
-		let textLabel = UILabel()
-		textLabel.translatesAutoresizingMaskIntoConstraints = false
-		textLabel.font = UIFont(name: "ArialMT", size: 16)
-		textLabel.text = element.text
-		textLabel.textColor = detailLabelColor
-		textLabel.numberOfLines = 0
-		textLabel.layer.masksToBounds = false
-		v.addSubview(textLabel)
-		v.addConstraints([
-			NSLayoutConstraint(item: textLabel, attribute: .Width, relatedBy: .Equal, toItem: v, attribute: .Width, multiplier: 1.0, constant: -40),
-			NSLayoutConstraint(item: textLabel, attribute: .Top, relatedBy: .Equal, toItem: titleLabel, attribute: .Bottom, multiplier: 1.0, constant: 5),
-			NSLayoutConstraint(item: textLabel, attribute: .Bottom, relatedBy: .Equal, toItem: v, attribute: .Bottom, multiplier: 1.0, constant: -10)
-			])
-		if showBulletOnRight{
-			v.addConstraint(NSLayoutConstraint(item: textLabel, attribute: .Right, relatedBy: .Equal, toItem: v, attribute: .Right, multiplier: 1.0, constant: -40))
-			textLabel.textAlignment = .Right
-		} else {
-			v.addConstraint(NSLayoutConstraint(item: textLabel, attribute: .Left, relatedBy: .Equal, toItem: v, attribute: .Left, multiplier: 1.0, constant: 40))
-			textLabel.textAlignment = .Left
+			v.addConstraint(NSLayoutConstraint(item: textLabel, attribute: .Bottom, relatedBy: .Equal, toItem: v, attribute: .Bottom, multiplier: 1.0, constant: -10))
 		}
 		
 		//draw the line between the bullets
