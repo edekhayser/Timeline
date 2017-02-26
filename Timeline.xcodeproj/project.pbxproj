@@ -15,12 +15,6 @@
 		200C5C1F19FB1FB4001EB442 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 200C5C1C19FB1FB4001EB442 /* heart.png */; };
 		200C5C2019FB1FB4001EB442 /* fireworks.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 200C5C1D19FB1FB4001EB442 /* fireworks.jpeg */; };
 		200C5C2119FB1FB4001EB442 /* april.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 200C5C1E19FB1FB4001EB442 /* april.jpeg */; };
-		203011241B6A953400CBA4A3 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 203011191B6A953400CBA4A3 /* JTSAnimatedGIFUtility.m */; };
-		203011251B6A953400CBA4A3 /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030111B1B6A953400CBA4A3 /* JTSImageInfo.m */; };
-		203011261B6A953400CBA4A3 /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030111D1B6A953400CBA4A3 /* JTSImageViewController.m */; };
-		203011271B6A953400CBA4A3 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030111F1B6A953400CBA4A3 /* JTSSimpleImageDownloader.m */; };
-		203011281B6A953400CBA4A3 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203011211B6A953400CBA4A3 /* UIApplication+JTSImageViewController.m */; };
-		203011291B6A953400CBA4A3 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 203011231B6A953400CBA4A3 /* UIImage+JTSImageEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,19 +28,6 @@
 		200C5C1C19FB1FB4001EB442 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		200C5C1D19FB1FB4001EB442 /* fireworks.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fireworks.jpeg; sourceTree = "<group>"; };
 		200C5C1E19FB1FB4001EB442 /* april.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = april.jpeg; sourceTree = "<group>"; };
-		200C5C2219FB20A1001EB442 /* Timeline-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Timeline-Bridging-Header.h"; sourceTree = "<group>"; };
-		203011181B6A953400CBA4A3 /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
-		203011191B6A953400CBA4A3 /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
-		2030111A1B6A953400CBA4A3 /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
-		2030111B1B6A953400CBA4A3 /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
-		2030111C1B6A953400CBA4A3 /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
-		2030111D1B6A953400CBA4A3 /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
-		2030111E1B6A953400CBA4A3 /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
-		2030111F1B6A953400CBA4A3 /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
-		203011201B6A953400CBA4A3 /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
-		203011211B6A953400CBA4A3 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
-		203011221B6A953400CBA4A3 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
-		203011231B6A953400CBA4A3 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +65,7 @@
 				200C5C0E19FB1E0F001EB442 /* TimelineView.swift */,
 				200C5BF219FB1E01001EB442 /* Main.storyboard */,
 				200C5BF719FB1E01001EB442 /* LaunchScreen.xib */,
-				203011171B6A953400CBA4A3 /* JTSImageViewController */,
 				200C5BEC19FB1E01001EB442 /* Supporting Files */,
-				200C5C2219FB20A1001EB442 /* Timeline-Bridging-Header.h */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -100,26 +79,6 @@
 				200C5C1E19FB1FB4001EB442 /* april.jpeg */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		203011171B6A953400CBA4A3 /* JTSImageViewController */ = {
-			isa = PBXGroup;
-			children = (
-				203011181B6A953400CBA4A3 /* JTSAnimatedGIFUtility.h */,
-				203011191B6A953400CBA4A3 /* JTSAnimatedGIFUtility.m */,
-				2030111A1B6A953400CBA4A3 /* JTSImageInfo.h */,
-				2030111B1B6A953400CBA4A3 /* JTSImageInfo.m */,
-				2030111C1B6A953400CBA4A3 /* JTSImageViewController.h */,
-				2030111D1B6A953400CBA4A3 /* JTSImageViewController.m */,
-				2030111E1B6A953400CBA4A3 /* JTSSimpleImageDownloader.h */,
-				2030111F1B6A953400CBA4A3 /* JTSSimpleImageDownloader.m */,
-				203011201B6A953400CBA4A3 /* UIApplication+JTSImageViewController.h */,
-				203011211B6A953400CBA4A3 /* UIApplication+JTSImageViewController.m */,
-				203011221B6A953400CBA4A3 /* UIImage+JTSImageEffects.h */,
-				203011231B6A953400CBA4A3 /* UIImage+JTSImageEffects.m */,
-			);
-			name = JTSImageViewController;
-			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,11 +108,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Evan Dekhayser";
 				TargetAttributes = {
 					200C5BE819FB1E01001EB442 = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -195,15 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				203011251B6A953400CBA4A3 /* JTSImageInfo.m in Sources */,
-				203011281B6A953400CBA4A3 /* UIApplication+JTSImageViewController.m in Sources */,
-				203011271B6A953400CBA4A3 /* JTSSimpleImageDownloader.m in Sources */,
-				203011241B6A953400CBA4A3 /* JTSAnimatedGIFUtility.m in Sources */,
-				203011261B6A953400CBA4A3 /* JTSImageViewController.m in Sources */,
 				200C5BF119FB1E01001EB442 /* ViewController.swift in Sources */,
 				200C5C0F19FB1E0F001EB442 /* TimelineView.swift in Sources */,
 				200C5BEF19FB1E01001EB442 /* AppDelegate.swift in Sources */,
-				203011291B6A953400CBA4A3 /* UIImage+JTSImageEffects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,8 +196,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -252,6 +208,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -286,8 +243,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -295,6 +254,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -304,6 +264,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -318,8 +279,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xappox.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Timeline/Timeline-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -332,7 +294,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xappox.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Timeline/Timeline-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
