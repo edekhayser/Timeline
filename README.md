@@ -5,7 +5,7 @@ Timeline like the Path iOS app
 
 <p align="center"><img title="Open and close animation" src="https://github.com/edekhayser/Timeline/blob/master/Screenshot.png"/></p>
 
-##Usage##
+## Usage ##
 
 The timeline is a UIView subclass, and can be taller than the screen. It is best used within a scrollview.
 
@@ -60,6 +60,6 @@ At this point, the timeline is completely ready to use. Add it to a scroll view,
 
 See the sample project for an example of how to do integrate this view into your project.
 
-##Conclusion##
+## Conclusion ##
 
 That's about all there is to it! Hope you find it useful, and let me know if you use it in any production apps. It's great to see my work used by others.
